@@ -10,7 +10,6 @@ public class BOJ3085 {
 	static int n = 0;
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
-		// Process input
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		n = Integer.parseInt(br.readLine());
 		char[][] arr = new char[n][n];
@@ -24,7 +23,6 @@ public class BOJ3085 {
 		int maxNum = 0;
 		char temp;
 		for(int i = 0; i < n; i++) {
-			// Switch two element
 			for(int j = 0; j < n; j++) {				
 				temp = arr[i][j];
 				if(i + 1 < n && arr[i][j] != arr[i+1][j]) {
@@ -45,22 +43,21 @@ public class BOJ3085 {
 				}
 			}
 		}
-		
 		System.out.println(maxNum);
 	}
 	
 
 	public static int findMaxNum(char[][] arr) {
 		int maxNum = 0;
+		int num = 0;
 		for(int i = 0; i < n; i ++ ) {
 			for (int j = 0; j < n; j++) {
-				int num = findRow(arr, i, j, 1);
+				num = findRow(arr, i, j, 1);
 				maxNum = maxNum < num ? num : maxNum; 
 				num = findColumn(arr, i, j, 1);
 				maxNum = maxNum < num ? num : maxNum; 
 			}
 		}
-		
 		return maxNum;
 	}
 	
