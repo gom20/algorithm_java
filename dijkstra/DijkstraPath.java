@@ -1,4 +1,4 @@
-package com.company;
+package dijkstra;
 
 import java.lang.Comparable;
 import java.util.HashMap;
