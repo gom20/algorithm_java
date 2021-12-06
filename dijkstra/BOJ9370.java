@@ -127,6 +127,7 @@ public class BOJ9370 {
         // 다익스트라 알고리즘 구현
         while(!pq.isEmpty()){
             Info info = pq.poll();
+            if(info.weight > dist[info.node]) continue;
             // 현재 노드의 인접노드 정보를 순회한다.
             for(Edge adj : adjs[info.node]){
                 // 일반 최단 거리 구함

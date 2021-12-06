@@ -77,6 +77,7 @@ public class BOJ1238 {
 
         while(!pq.isEmpty()){
             Info info = pq.poll();
+            if(dist[info.node] < info.weight) continue;
             for(Edge edge : adjs[info.node]){
                 // 현재 노드의 인접 노드 탐색
                 if(info.weight + edge.weight < dist[edge.to]){
