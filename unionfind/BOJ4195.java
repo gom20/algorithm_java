@@ -50,7 +50,7 @@ public class BOJ4195 {
         a = find(a);
         b = find(b);
 
-        if(setSize.get(a) > setSize.get(b)){
+        if(setSize.get(a) >= setSize.get(b)){
             parent.put(b, a);
             setSize.put(a, setSize.get(a) + setSize.get(b));
             setSize.put(b, 0);
